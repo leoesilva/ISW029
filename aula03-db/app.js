@@ -1,7 +1,7 @@
 const SEQUELIZE = require("sequelize");
-const sequelize = new SEQUELIZE ("dwII", "root", "", {
-    host: "localhost",
-    dialect: "mysql"
+const sequelize = new SEQUELIZE ({
+    dialect: "sqlite",
+    storage: "dwII.db"
 })
 
 sequelize.authenticate().then(function() {
