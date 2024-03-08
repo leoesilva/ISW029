@@ -1,11 +1,7 @@
-const adicao = require("./adicao")
-const subtracao = require("./subtracao")
-const multiplicacao = require("./multiplicacao")
-const divisao = require("./divisao")
+const http = require('http');
 
-let n1 = 10, n2 = 2;
+http.createServer(function(req, res) {
+    res.end("Hello world!");
+}).listen(8081);
 
-console.log(adicao(n1, n2))
-console.log(subtracao(n1, n2))
-console.log(multiplicacao(n1, n2))
-console.log(divisao(n1, n2))
+console.log("Servidor ativo");

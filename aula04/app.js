@@ -1,24 +1,11 @@
-const express = require("express")
-const app = express()
-const agendamentos = require("./banco")
-
-app.listen(8081, function(){
-    console.log("Servidor online.")
+const SEQUELIZE = require("sequelize");
+const sequelize = new SEQUELIZE ({
+    dialect: "sqlite",
+    storage: "dwII.db"
 })
 
-app.get("/", function(req, res){
-    res.send("<h1>Página principal</h1>")
-})
-
-app.get("/cadastrar/:nome/:endereco/:bairro/:cep/:cidade/:estado/:observacao", function(req, res){
-    agendamentos.create({
-        nome: req.params.nome,
-        endereco: req.params.endereco,
-        bairro: req.params.bairro,
-        cep: req.params.cep,
-        cidade: req.params.cidade,
-        estado: req.params.estado,
-        observacao: req.params.observacao
-    })
-    res.send("Registro inserido com sucesso")
+sequelize.authenticate().then(function() {
+    console.log("Conectado com sucesso!")
+}).catch(function(erro){
+    console.log(erro)
 })
