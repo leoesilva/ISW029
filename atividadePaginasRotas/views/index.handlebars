@@ -1,26 +1,15 @@
 <div class="container">
   <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Sistema Web</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <a class="navbar-brand text-uppercase" href="/">Sistema Web</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a
-              class="nav-link active"
-              aria-current="page"
-              href="/"
-            >Cadastrar</a>
+            <a class="nav-link active" aria-current="page" href="/">Cadastrar</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/consultar">Consultar</a>
@@ -33,35 +22,34 @@
   <div class="row">
     <div class="col">
       <div class="container">
-        <h5>Cadastrar - Agendamento de Potenciais Clientes</h5>
-        <h6>Sistema utilizado para agendamento de serviços</h6>
+        <h5 class="mb-4">Cadastrar - Agendamento de Potenciais Clientes</h5>
+        <h6 class="mb-4">Sistema utilizado para agendamento de serviços</h6>
         <form>
-          <label for="inputNome">Nome:</label>
-          <input type="text" name="nome" id="inputNome" class="form-control" />
-          <label for="inputTelefone">Telefone:</label>
-          <input
-            type="text"
-            name="telefone"
-            id="inputTelefone"
-            class="form-control"
-          />
-          <label for="selectOrigem">Origem:</label>
-          <select class="form-select" aria-label="Origem" id="selectOrigem">
-            <option selected>Selecione uma opção</option>
-            <option value="celular">Celular</option>
-            <option value="email">E-mail</option>
-            <option value="social">Rede social</option>
-          </select>
-          <label for="inputDataContato">Data do Contato:</label>
-          <input
-            type="date"
-            name="dataContato"
-            id="inputDataContato"
-            class="form-control"
-          />
-          <label for="textareaObs">Observação</label>
-          <textarea class="form-control" id="textareaObs" rows="3"></textarea>
-          <button type="submit" class="btn btn-primary mb-3">Cadastrar</button>
+          <div class="mb-3 mt-3">
+            <label for="inputNome" class="form-label">Nome:</label>
+            <input type="text" name="inputNome" id="inputNome" class="form-control" />
+          </div>
+          <div class="mb-3 mt-3"><label for="inputTelefone" class="form-label">Telefone:</label>
+            <input type="tel" name="inputTelefone" id="inputTelefone" class="form-control" />
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="selectOrigem" class="form-label">Origem:</label>
+            <select class="form-select mb-4" name="selectOrigem" aria-label="Origem" id="selectOrigem">
+              <option selected disabled>Selecione uma opção</option>
+              <option value="celular">Celular</option>
+              <option value="email">E-mail</option>
+              <option value="social">Rede social</option>
+            </select>
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="inputDataContato" class="form-label">Data do Contato:</label>
+            <input type="date" name="inputDataContato" id="inputDataContato" class="form-control mb-4" />
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="textareaObs" class="form-label">Observação</label>
+            <textarea class="form-control mb-4" name="textareaObs" id="textareaObs" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>
       </div>
     </div>
