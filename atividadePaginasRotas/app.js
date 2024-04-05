@@ -1,6 +1,9 @@
+require("dotenv-safe").config({
+  allowEmptyValues: true,
+});
 const express = require("express");
 const app = express();
-const port = 8081;
+const port = process.env.SERVER_PORT;
 const handlebars = require("express-handlebars").engine;
 const bodyParser = require("body-parser");
 const post = require("./models/post");
@@ -13,14 +16,6 @@ app.use(bodyParser.json());
 
 app.get("/", function (req, res) {
   res.render("index");
-});
-
-app.get("/consultar", function (req, res) {
-  res.render("consultar");
-});
-
-app.get("/atualizar", function (req, res) {
-  res.render("atualizar");
 });
 
 app.post("/cadastrar", function (req, res) {
@@ -38,6 +33,44 @@ app.post("/cadastrar", function (req, res) {
     .catch(function (erro) {
       res.send("Falha ao cadastrar os dados: " + erro);
     });
+});
+
+app.get("/consultar", function (req, res) {
+  post.findAll().then(function (posts) {
+    res.render("consultar", { post: posts });
+  });
+});
+
+app.get("/atualizar/:id", function (req, res) {
+  post.findAll({ where: { id: req.params.id } }).then(function (posts) {
+    res.render("atualizar", { post: posts });
+  });
+});
+
+app.post("/editar", function (req, res) {
+  post
+    .update(
+      {
+        nome: req.body.nome,
+        telefone: req.body.telefone,
+        origem: req.body.origem,
+        dataContato: req.body.dataContato,
+        observacao: req.body.observacao,
+      },
+      { where: { id: req.body.id } }
+    )
+    .then(function () {
+      res.redirect("/");
+    })
+    .catch(function (erro) {
+      res.send("Falha ao cadastrar os dados: " + erro);
+    });
+});
+
+app.get("/excluir/:id", function (req, res) {
+  post.destroy({ where: { id: req.params.id } }).then(function () {
+    res.redirect("/consultar");
+  });
 });
 
 app.listen(port, function () {
