@@ -2,15 +2,8 @@
   <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
     <div class="container-fluid">
       <a class="navbar-brand text-uppercase" href="/">Sistema Web</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -32,62 +25,37 @@
         <h5 class="mb-4">Atualizar - Agendamento de Potenciais Clientes</h5>
         <h6 class="mb-4">Sistema utilizado para agendamento de serviços</h6>
         {{#each post}}
-          {{#dataValues}}
-            <form name="formAtualizar" action="/editar" method="post">
-              <div class="mb-3 mt-3">
-                <input type="hidden" name="id" value="{{id}}">
-                <label for="nome" class="form-label">Nome:</label>
-                <input type="text" name="nome" id="nome" class="form-control" value="{{nome}}" />
-              </div>
-              <div class="mb-3 mt-3"><label
-                  for="telefone"
-                  class="form-label"
-                >Telefone:</label>
-                <input
-                  type="tel"
-                  name="telefone"
-                  id="telefone"
-                  class="form-control" 
-                  value="{{telefone}}"
-                />
-              </div>
-              <div class="mb-3 mt-3">
-                <label for="origem" class="form-label">Origem:</label>
-                <select
-                  class="form-select mb-4"
-                  name="origem"
-                  aria-label="Origem"
-                  id="origem"
-                >
-                  <option selected disabled>Selecione uma opção</option>
-                  <option value="celular">Celular</option>
-                  <option value="email">E-mail</option>
-                  <option value="social">Rede social</option>
-                </select>
-              </div>
-              <div class="mb-3 mt-3">
-                <label for="dataContato" class="form-label">Data do Contato:</label>
-                <input
-                  type="date"
-                  name="dataContato"
-                  id="dataContato"
-                  class="form-control mb-4" 
-                  value="{{dataContato}}"
-                />
-              </div>
-              <div class="mb-3 mt-3">
-                <label for="observacao" class="form-label">Observação</label>
-                <textarea
-                  class="form-control mb-4"
-                  name="observacao"
-                  id="observacao"
-                  rows="3"
-                >{{observacao}}</textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Atualizar</button>
-            </form>
-            {{/dataValues}}
-          {{/each}}        
+        {{#dataValues}}
+        <form name="formAtualizar" action="/editar" method="post">
+          <div class="mb-3 mt-3">
+            <input type="hidden" name="id" value="{{id}}">
+            <label for="nome" class="form-label">Nome:</label>
+            <input type="text" name="nome" id="nome" class="form-control" value="{{nome}}" />
+          </div>
+          <div class="mb-3 mt-3"><label for="telefone" class="form-label">Telefone:</label>
+            <input type="tel" name="telefone" id="telefone" class="form-control" value="{{telefone}}" />
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="origem" class="form-label">Origem:</label>
+            <select class="form-select mb-4" name="origem" aria-label="Origem" id="origem">
+              <option selected disabled>Selecione uma opção</option>
+              <option value="celular">Celular</option>
+              <option value="email">E-mail</option>
+              <option value="social">Rede social</option>
+            </select>
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="dataContato" class="form-label">Data do Contato:</label>
+            <input type="date" name="dataContato" id="dataContato" class="form-control mb-4" value="{{dataContato}}" />
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="observacao" class="form-label">Observação</label>
+            <textarea class="form-control mb-4" name="observacao" id="observacao" rows="3">{{observacao}}</textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Atualizar</button>
+        </form>
+        {{/dataValues}}
+        {{/each}}
       </div>
     </div>
   </div>

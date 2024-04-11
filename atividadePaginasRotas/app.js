@@ -1,9 +1,6 @@
-require("dotenv-safe").config({
-  allowEmptyValues: true,
-});
 const express = require("express");
 const app = express();
-const port = process.env.SERVER_PORT;
+const port = 8081
 const handlebars = require("express-handlebars").engine;
 const bodyParser = require("body-parser");
 const post = require("./models/post");

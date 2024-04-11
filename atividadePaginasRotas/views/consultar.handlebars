@@ -2,15 +2,8 @@
   <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
     <div class="container-fluid">
       <a class="navbar-brand text-uppercase" href="/">Sistema Web</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -19,11 +12,7 @@
             <a class="nav-link" href="/">Cadastrar</a>
           </li>
           <li class="nav-item">
-            <a
-              class="nav-link active"
-              aria-current="page"
-              href="/consultar"
-            >Consultar</a>
+            <a class="nav-link active" aria-current="page" href="/consultar">Consultar</a>
           </li>
         </ul>
       </div>
@@ -65,35 +54,31 @@
             </div>
           </div>
           {{#each post}}
-            {{#dataValues}}
-              <div class="row">
-                <div class="col">
-                  {{nome}}
-                </div>
-                <div class="col">
-                  {{telefone}}
-                </div>
-                <div class="col">
-                  {{origem}}
-                </div>
-                <div class="col">
-                  {{dataContato}}
-                </div>
-                <div class="col">
-                  {{observacao}}
-                </div>
-                <div class="col">
-                  <button type="button" class="btn btn-primary"><a
-                      href="/atualizar/{{id}}"
-                      style="color:inherit"
-                    >Editar</a></button>
-                  <button type="button" class="btn btn-primary"><a
-                      href="/excluir/{{id}}"
-                      style="color:inherit"
-                    >Excluir</a></button>
-                </div>
-              </div>
-            {{/dataValues}}
+          {{#dataValues}}
+          <div class="row">
+            <div class="col">
+              {{nome}}
+            </div>
+            <div class="col">
+              {{telefone}}
+            </div>
+            <div class="col">
+              {{origem}}
+            </div>
+            <div class="col">
+              {{dataContato}}
+            </div>
+            <div class="col">
+              {{observacao}}
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-primary"><a href="/atualizar/{{id}}"
+                  style="color:inherit">Editar</a></button>
+              <button type="button" class="btn btn-primary"><a href="/excluir/{{id}}"
+                  style="color:inherit">Excluir</a></button>
+            </div>
+          </div>
+          {{/dataValues}}
           {{/each}}
         </div>
       </div>
